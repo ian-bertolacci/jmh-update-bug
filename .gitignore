@@ -1,4 +1,5 @@
 project_*/
+project_*.*.out
 
 # Compiled class file
 *.class
