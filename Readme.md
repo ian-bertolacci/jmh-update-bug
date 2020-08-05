@@ -83,7 +83,25 @@ If working from a *clean* project, making the changes (in this case, overwriting
 
 In contrast, if working from a *clean* project, *first* running `gradle clean build jmh`, *then* making the changes, and *finally* running `gradle clean build jmh` again, it will throw the java.lang.IncompatibleClassChangeError.
 
-The full output for this case (which can be found in `outputs/project_updated_after_gradle_invocation_broken.2.out`):
+This can be worked around by running gradle with `--no-daemon`, or by restarting *all* gradle daemons.
+
+These are the test names (which is used as/in project directory name and output name):
++ project_base_working
+  This tests the 'clean' unmodified project.
+  It should always succeed.
++ project_updated_before_gradle_invocation_working
+  This tests the updated project, and is updated while in the clean state, before any running gradle.
+  It should always succeed.
++ project_updated_after_gradle_invocation_broken
+  This tests running gradle *then* updating, and running again.
+  This should succeed in the first run, then fail in the second run.
++ project_updated_after_gradle_no_daemon_invocation_working
+  This tests running gradle *without* the daemon the updating, and running again (without the daemon).
+
+Each project is built and tested twice, regardless of if it is updated or not, proving that it is not (1) the act of running twice, or (2) the benchmark definition.
+
+
+The full output for this case (and can be found in `outputs/project_updated_after_gradle_invocation_broken.2.out`):
 ```
 > Task :clean
 > Task :compileJava
@@ -150,6 +168,3 @@ Execution failed for task ':jmhRunBytecodeGenerator'.
        at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
        at java.base/java.lang.Thread.run(Thread.java:834)
 ```
-
-
-This can be worked around by running gradle with `--no-daemon`, or by restarting *all* gradle daemons.
