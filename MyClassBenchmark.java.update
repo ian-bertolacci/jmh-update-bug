@@ -16,6 +16,7 @@ import com.cool.library.MyClass;
 public class MyClassBenchmark {
 
   public static final FactoryA factoryA = new FactoryA();
+  public static final FactoryB factoryB = new FactoryB();
 
   public static class FactoryA {
     private int nextValue;
@@ -28,6 +29,18 @@ public class MyClassBenchmark {
       int returnValue = this.nextValue;
       this.nextValue += 1;
       return returnValue;
+    }
+  }
+
+  public static class FactoryB {
+    private Random rand;
+
+    FactoryB(){
+      this.rand = new Random();
+    }
+
+    public int createValue() {
+      return this.rand.nextInt();
     }
   }
 
@@ -45,7 +58,11 @@ public class MyClassBenchmark {
       this.data = new int[this.numOperations];
 
       for( int i = 0; i < this.numOperations; ++i ){
-        this.data[i] = MyClassBenchmark.factoryA.createValue();
+        if( i % 2 == 0 ){
+          this.data[i] = MyClassBenchmark.factoryA.createValue();
+        } else {
+          this.data[i] = MyClassBenchmark.factoryB.createValue();
+        }
       }
     }
   }
@@ -60,7 +77,6 @@ public class MyClassBenchmark {
     for( int by : state.data ){
       state.instance.increment( by );
     }
-    System.out.println( state.instance.getValue() );
     blackhole.consume( state.instance.getValue() );
   }
 
@@ -69,7 +85,6 @@ public class MyClassBenchmark {
     for( int by : state.data ){
       state.instance.decrement( by );
     }
-    System.out.println( state.instance.getValue() );
     blackhole.consume( state.instance.getValue() );
   }
 }
