@@ -1,0 +1,78 @@
+> Task :clean
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+> Task :jar
+> Task :assemble
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :check UP-TO-DATE
+> Task :build
+> Task :compileJmhJava
+> Task :processJmhResources NO-SOURCE
+> Task :jmhClasses
+
+> Task :jmhRunBytecodeGenerator FAILED
+Processing 4 classes from /home/ian/Projects/TestCode/jmh-gradle-plugin-change-bug/project_updated_after_gradle_invocation_broken/build/classes/java/jmh with "reflection" generator
+Writing out Java source to /home/ian/Projects/TestCode/jmh-gradle-plugin-change-bug/project_updated_after_gradle_invocation_broken/build/jmh-generated-sources and resources to /home/ian/Projects/TestCode/jmh-gradle-plugin-change-bug/project_updated_after_gradle_invocation_broken/build/jmh-generated-resources
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':jmhRunBytecodeGenerator'.
+> A failure occurred while executing me.champeau.gradle.JmhBytecodeGeneratorRunnable
+   > Generation of JMH bytecode failed with 1 errors:
+       - Annotation generator had thrown the exception.
+     java.lang.IncompatibleClassChangeError: com.cool.library.benchmarks.MyClassBenchmark and com.cool.library.benchmarks.MyClassBenchmark$FactoryB disagree on InnerClasses attribute
+     	at java.base/java.lang.Class.getDeclaringClass0(Native Method)
+     	at java.base/java.lang.Class.getEnclosingClass(Class.java:1517)
+     	at java.base/java.lang.Class.getCanonicalName0(Class.java:1625)
+     	at java.base/java.lang.Class.getCanonicalName(Class.java:1610)
+     	at org.openjdk.jmh.generators.reflection.RFClassInfo.getQualifiedName(RFClassInfo.java:67)
+     	at org.openjdk.jmh.generators.core.BenchmarkGenerator.buildAnnotatedSet(BenchmarkGenerator.java:206)
+     	at org.openjdk.jmh.generators.core.BenchmarkGenerator.generate(BenchmarkGenerator.java:75)
+     	at me.champeau.gradle.JmhBytecodeGeneratorRunnable.run(JmhBytecodeGeneratorRunnable.java:126)
+     	at org.gradle.workers.internal.AdapterWorkAction.execute(AdapterWorkAction.java:57)
+     	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+     	at org.gradle.workers.internal.AbstractClassLoaderWorker$1.create(AbstractClassLoaderWorker.java:49)
+     	at org.gradle.workers.internal.AbstractClassLoaderWorker$1.create(AbstractClassLoaderWorker.java:43)
+     	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:97)
+     	at org.gradle.workers.internal.AbstractClassLoaderWorker.executeInClassLoader(AbstractClassLoaderWorker.java:43)
+     	at org.gradle.workers.internal.IsolatedClassloaderWorker.run(IsolatedClassloaderWorker.java:49)
+     	at org.gradle.workers.internal.IsolatedClassloaderWorker.run(IsolatedClassloaderWorker.java:30)
+     	at org.gradle.workers.internal.WorkerDaemonServer.run(WorkerDaemonServer.java:85)
+     	at org.gradle.workers.internal.WorkerDaemonServer.run(WorkerDaemonServer.java:55)
+     	at org.gradle.process.internal.worker.request.WorkerAction$1.call(WorkerAction.java:138)
+     	at org.gradle.process.internal.worker.child.WorkerLogEventListener.withWorkerLoggingProtocol(WorkerLogEventListener.java:41)
+     	at org.gradle.process.internal.worker.request.WorkerAction.run(WorkerAction.java:135)
+     	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+     	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+     	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+     	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+     	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+     	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+     	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+     	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
+     	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+     	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+     	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+     	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+     	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+     	at java.base/java.lang.Thread.run(Thread.java:834)
+     
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.5.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 3s
+5 actionable tasks: 5 executed

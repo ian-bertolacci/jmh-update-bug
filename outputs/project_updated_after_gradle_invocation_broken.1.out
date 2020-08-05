@@ -1,0 +1,210 @@
+> Task :clean UP-TO-DATE
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+> Task :jar
+> Task :assemble
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :check UP-TO-DATE
+> Task :build
+> Task :compileJmhJava
+> Task :processJmhResources NO-SOURCE
+> Task :jmhClasses
+
+> Task :jmhRunBytecodeGenerator
+Processing 3 classes from /home/ian/Projects/TestCode/jmh-gradle-plugin-change-bug/project_updated_after_gradle_invocation_broken/build/classes/java/jmh with "reflection" generator
+Writing out Java source to /home/ian/Projects/TestCode/jmh-gradle-plugin-change-bug/project_updated_after_gradle_invocation_broken/build/jmh-generated-sources and resources to /home/ian/Projects/TestCode/jmh-gradle-plugin-change-bug/project_updated_after_gradle_invocation_broken/build/jmh-generated-resources
+
+> Task :jmhCompileGeneratedClasses
+> Task :jmhJar
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.openjdk.jmh.util.Utils (file:/home/ian/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-core/1.21/442447101f63074c61063858033fbfde8a076873/jmh-core-1.21.jar) to field java.io.PrintStream.charOut
+WARNING: Please consider reporting this to the maintainers of org.openjdk.jmh.util.Utils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+
+> Task :jmh
+# JMH version: 1.21
+# VM version: JDK 11.0.8, OpenJDK 64-Bit Server VM, 11.0.8+10-post-Ubuntu-0ubuntu118.04.1
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: <none>
+# Warmup: <none>
+# Measurement: 10 iterations, 10 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.cool.library.benchmarks.MyClassBenchmark.construct
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 0.001 ms/op
+Iteration   2: ≈ 10⁻⁴ ms/op
+Iteration   3: ≈ 10⁻⁴ ms/op
+Iteration   4: ≈ 10⁻⁴ ms/op
+Iteration   5: ≈ 10⁻⁴ ms/op
+Iteration   6: ≈ 10⁻⁴ ms/op
+Iteration   7: ≈ 10⁻⁴ ms/op
+Iteration   8: ≈ 10⁻⁴ ms/op
+Iteration   9: ≈ 10⁻⁵ ms/op
+Iteration  10: ≈ 10⁻⁴ ms/op
+
+Result "com.cool.library.benchmarks.MyClassBenchmark.construct":
+  ≈ 10⁻⁴ ms/op
+
+
+# JMH version: 1.21
+# VM version: JDK 11.0.8, OpenJDK 64-Bit Server VM, 11.0.8+10-post-Ubuntu-0ubuntu118.04.1
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: <none>
+# Warmup: <none>
+# Measurement: 10 iterations, 10 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.cool.library.benchmarks.MyClassBenchmark.decrement
+# Parameters: (numOperations = 1)
+
+# Run progress: 20.00% complete, ETA 00:00:01
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: ≈ 10⁻⁴ ms/op
+Iteration   2: ≈ 10⁻⁵ ms/op
+Iteration   3: ≈ 10⁻⁵ ms/op
+Iteration   4: ≈ 10⁻⁵ ms/op
+Iteration   5: ≈ 10⁻⁵ ms/op
+Iteration   6: ≈ 10⁻⁵ ms/op
+Iteration   7: ≈ 10⁻⁵ ms/op
+Iteration   8: ≈ 10⁻⁵ ms/op
+Iteration   9: ≈ 10⁻⁵ ms/op
+Iteration  10: ≈ 10⁻⁵ ms/op
+
+Result "com.cool.library.benchmarks.MyClassBenchmark.decrement":
+  ≈ 10⁻⁴ ms/op
+
+
+# JMH version: 1.21
+# VM version: JDK 11.0.8, OpenJDK 64-Bit Server VM, 11.0.8+10-post-Ubuntu-0ubuntu118.04.1
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: <none>
+# Warmup: <none>
+# Measurement: 10 iterations, 10 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.cool.library.benchmarks.MyClassBenchmark.decrement
+# Parameters: (numOperations = 100000)
+
+# Run progress: 40.00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 0.112 ms/op
+Iteration   2: 0.122 ms/op
+Iteration   3: 0.122 ms/op
+Iteration   4: 0.150 ms/op
+Iteration   5: 0.110 ms/op
+Iteration   6: 0.285 ms/op
+Iteration   7: 0.149 ms/op
+Iteration   8: 0.140 ms/op
+Iteration   9: 0.228 ms/op
+Iteration  10: 0.227 ms/op
+
+Result "com.cool.library.benchmarks.MyClassBenchmark.decrement":
+  0.165 ±(99.9%) 0.092 ms/op [Average]
+  (min, avg, max) = (0.110, 0.165, 0.285), stdev = 0.061
+  CI (99.9%): [0.073, 0.256] (assumes normal distribution)
+
+
+# JMH version: 1.21
+# VM version: JDK 11.0.8, OpenJDK 64-Bit Server VM, 11.0.8+10-post-Ubuntu-0ubuntu118.04.1
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: <none>
+# Warmup: <none>
+# Measurement: 10 iterations, 10 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.cool.library.benchmarks.MyClassBenchmark.increment
+# Parameters: (numOperations = 1)
+
+# Run progress: 60.00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: ≈ 10⁻⁴ ms/op
+Iteration   2: ≈ 10⁻⁵ ms/op
+Iteration   3: ≈ 10⁻⁵ ms/op
+Iteration   4: ≈ 10⁻⁵ ms/op
+Iteration   5: ≈ 10⁻⁵ ms/op
+Iteration   6: ≈ 10⁻⁵ ms/op
+Iteration   7: ≈ 10⁻⁵ ms/op
+Iteration   8: ≈ 10⁻⁵ ms/op
+Iteration   9: ≈ 10⁻⁵ ms/op
+Iteration  10: ≈ 10⁻⁵ ms/op
+
+Result "com.cool.library.benchmarks.MyClassBenchmark.increment":
+  ≈ 10⁻⁵ ms/op
+
+
+# JMH version: 1.21
+# VM version: JDK 11.0.8, OpenJDK 64-Bit Server VM, 11.0.8+10-post-Ubuntu-0ubuntu118.04.1
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: <none>
+# Warmup: <none>
+# Measurement: 10 iterations, 10 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.cool.library.benchmarks.MyClassBenchmark.increment
+# Parameters: (numOperations = 100000)
+
+# Run progress: 80.00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 0.443 ms/op
+Iteration   2: 0.192 ms/op
+Iteration   3: 0.185 ms/op
+Iteration   4: 0.212 ms/op
+Iteration   5: 0.432 ms/op
+Iteration   6: 0.125 ms/op
+Iteration   7: 0.186 ms/op
+Iteration   8: 0.174 ms/op
+Iteration   9: 0.148 ms/op
+Iteration  10: 0.147 ms/op
+
+Result "com.cool.library.benchmarks.MyClassBenchmark.increment":
+  0.224 ±(99.9%) 0.174 ms/op [Average]
+  (min, avg, max) = (0.125, 0.224, 0.443), stdev = 0.115
+  CI (99.9%): [0.050, 0.399] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:01
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                   (numOperations)  Mode  Cnt   Score    Error  Units
+MyClassBenchmark.construct              N/A  avgt   10  ≈ 10⁻⁴           ms/op
+MyClassBenchmark.decrement                1  avgt   10  ≈ 10⁻⁴           ms/op
+MyClassBenchmark.decrement           100000  avgt   10   0.165 ±  0.092  ms/op
+MyClassBenchmark.increment                1  avgt   10  ≈ 10⁻⁵           ms/op
+MyClassBenchmark.increment           100000  avgt   10   0.224 ±  0.174  ms/op
+
+Benchmark result is saved to /home/ian/Projects/TestCode/jmh-gradle-plugin-change-bug/project_updated_after_gradle_invocation_broken/build/reports/jmh/results.txt
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.5.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 9s
+8 actionable tasks: 7 executed, 1 up-to-date
