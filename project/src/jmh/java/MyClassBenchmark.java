@@ -60,7 +60,6 @@ public class MyClassBenchmark {
     for( int by : state.data ){
       state.instance.increment( by );
     }
-    System.out.println( state.instance.getValue() );
     blackhole.consume( state.instance.getValue() );
   }
 
@@ -69,7 +68,6 @@ public class MyClassBenchmark {
     for( int by : state.data ){
       state.instance.decrement( by );
     }
-    System.out.println( state.instance.getValue() );
     blackhole.consume( state.instance.getValue() );
   }
 }
